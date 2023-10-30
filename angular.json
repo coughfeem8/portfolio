@@ -63,7 +63,7 @@
               "optimization": false,
               "outputHashing": "all",
               "sourceMap": true,
-              "vendorChunk": true 
+              "vendorChunk": true
             }
           },
           "defaultConfiguration": "production"

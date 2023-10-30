@@ -9,7 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "prod": "ng build -c production",
-    "analyze": "webpack-bundle-analyzer dist/frontend/stats.json -p8888",
+    "analyze": "webpack-bundle-analyzer dist/portfolio/stats.json -p8888",
     "compile-sass": "sass src/styles/app.scss src/styles/app.css",
     "compile-api": "ng-openapi-gen --input http://localhost:5001/swagger/v1/swagger.json --output src/app/modules/api"
   },
