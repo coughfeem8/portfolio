@@ -25,3 +25,23 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## sass and styling 
+to create or modify custom styling and variables you need to re generate the theme css using sass
+
+To properly use the theme structure there are two approaches. 
+1. Use the style file structure to modify a component, setting, or page content and have it precompiled using sass.
+   1. make new files as required to keep changes small. and import them using the `_index.scss`.
+2. import the variable file `src/styles/variables.scss` into your component style file to make use of the variables direction.
+   1. NOTE: using `var(--variable-name)` will not work for custom variables as those are not generated on the sass compilation.
+
+UI Frameworks UI should be modified on their respective scss file inside the styles folder to have the changes propagate correctly.
+
+requirements: you need to have sass installed globally. `npm i -g sass@latest`
+
+commands to build theme.
+`sass src/styles/app.scss src/styles/app.css` or `npm run compile-sass`
+
+## Supported devices
+
+The SPA is designed to be responsive for both desktop and mobile.

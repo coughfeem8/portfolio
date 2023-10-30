@@ -36,6 +36,13 @@
           },
           "configurations": {
             "production": {
+              "buildOptimizer": true,
+              "extractLicenses": true,
+              "namedChunks": true,
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "vendorChunk": false,
               "budgets": [
                 {
                   "type": "initial",
@@ -47,16 +54,16 @@
                   "maximumWarning": "2kb",
                   "maximumError": "4kb"
                 }
-              ],
-              "outputHashing": "all"
+              ]
             },
             "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
+              "buildOptimizer": true,
               "extractLicenses": false,
+              "namedChunks": true,
+              "optimization": false,
+              "outputHashing": "all",
               "sourceMap": true,
-              "namedChunks": true
+              "vendorChunk": true 
             }
           },
           "defaultConfiguration": "production"
@@ -100,5 +107,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
