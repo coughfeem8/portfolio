@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy Angular App to Github Page
 
 on:
   # Runs on pushes targeting the default branch
@@ -37,12 +37,17 @@ jobs:
       - name: Install Angular CLI
         run: npm install -g @angular/cli@16
       - name: Install dependencies
-        run: npm install
+        run: npm ci
       - name: Build Angular app
         run: ng build --configuration production
-  
-      - name: Deploy 🚀 
-        if: github.event_name != 'pull_request'
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Install rsync
+        run: |
+          sudo apt-get update -qy
+          sudo apt-get install -y rsync
+      - name: Deploy to GitHub Pages 🚀 
+        uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
-          folder: dist/portfolio
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist/portfolio
+          
