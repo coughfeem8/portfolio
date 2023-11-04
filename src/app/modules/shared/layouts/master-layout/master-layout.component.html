@@ -1,15 +1,17 @@
-<div class="flex flex-row border-solid justify-between border-2 m-3 border-jet dark:border-anti-flash_white">
-  <div id="left" class="flex flex-col justify-between items-left">
-    <app-corner-menu></app-corner-menu>
-    <app-side-menu></app-side-menu>
-    <app-corner-menu></app-corner-menu>
-  </div>
-  <div id="center" class="flex flex-grow justify-center">
-    <router-outlet></router-outlet>
-  </div>
-  <div id="right" class="flex flex-col justify-between items-right">
-    <app-corner-menu></app-corner-menu>
-    <app-side-menu></app-side-menu>
-    <app-corner-menu></app-corner-menu>
+<div class="h-full w-full flex flex-col">
+  <div id="master-border" class=" m-4 flex flex-row justify-between border-2 border-jet dark:border-anti-flash_white" >
+    <div id="left" class="flex flex-col justify-between items-left">
+      <app-corner-menu></app-corner-menu>
+      <app-side-menu class="-rotate-90"></app-side-menu>
+      <app-corner-menu></app-corner-menu>
+    </div>
+    <div id="center" class="flex flex-grow justify-center">
+      <router-outlet></router-outlet>
+    </div>
+    <div id="right" class="flex flex-col justify-self-stretch justify-between items-right">
+      <app-corner-menu></app-corner-menu>
+      <app-side-menu class="-rotate-90"></app-side-menu>
+      <app-corner-menu></app-corner-menu>
+    </div>
   </div>
 </div>

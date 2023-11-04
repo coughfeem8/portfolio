@@ -6,7 +6,7 @@
 
 @layer base {
     body{
-        @apply bg-anti-flash_white dark:bg-jet  text-jet dark:text-anti-flash_white border-jet dark:border-anti-flash_white
+        @apply h-screen bg-anti-flash_white dark:bg-jet  text-jet dark:text-anti-flash_white border-jet dark:border-anti-flash_white
     }
     h1 {
       @apply text-2xl;
