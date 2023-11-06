@@ -1,20 +1,23 @@
-import { Component, ViewContainerRef,Input } from '@angular/core';
+import { Component, OnDestroy, OnChanges, ViewChild, ViewContainerRef,Input, OnInit } from '@angular/core';
 import { Direction } from '../../models/layout'
+import { Observable, Subject, skipWhile, takeUntil } from 'rxjs';
 @Component({
   selector: 'app-base-menu',
-  templateUrl: './base-menu.component.html',
-  styleUrls: ['./base-menu.component.scss']
+  styleUrls: ['./base-menu.component.scss'],
+  templateUrl: './base-menu.component.html'   
 })
 
 /** parent component that allows all child to inject dynamic
- *  content. Used for menus and ideally to change at runtime */
-export class BaseMenuComponent {
+ *  content. Used for menus. ideally to change at runtime */
+export class BaseMenuComponent implements OnDestroy {
   @Input() type: Direction[] = [];
-  constructor(private viewContainerRef: ViewContainerRef ){
-    
-  }
+  @Input() content: Observable<any[]> = new Observable<any[]>();
+  public onDestroy$: Subject<boolean> = new Subject();
 
-  loadComponent(componentType: any) {
-    this.viewContainerRef.createComponent(componentType);
+  constructor(){ }
+
+  ngOnDestroy(): void {
+    this.onDestroy$.next(true);
+    this.onDestroy$.complete();
   }
 }
