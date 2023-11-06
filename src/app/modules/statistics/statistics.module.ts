@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { LandingComponent } from './pages/landing/landing.component';
 import { Route, RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 
 const routes: Route[] = [
   {
@@ -21,7 +21,7 @@ const routes: Route[] = [
     LandingComponent
   ],
   imports: [
-    CommonModule,
+    SharedModule,
     RouterModule.forChild(routes)
   ]
 })
