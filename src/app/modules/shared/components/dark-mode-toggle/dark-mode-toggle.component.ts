@@ -45,7 +45,6 @@ export class DarkModeToggleComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    console.log('destrying')
     this.onDestroy$.next(true);
     this.onDestroy$.complete();
   }

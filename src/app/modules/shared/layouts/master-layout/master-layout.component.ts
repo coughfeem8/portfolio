@@ -1,5 +1,13 @@
 import { Component } from '@angular/core';
 import { Direction } from '../../models/layout';
+import { of } from 'rxjs';
+
+const componentsConfig = [
+  {
+    component: () =>
+      import('src/app/modules/shared/components/dark-mode-toggle/dark-mode-toggle.component'),
+  },
+];
 
 @Component({
   selector: 'app-master-layout',
