@@ -1,19 +1,23 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 import { Route, RouterModule } from '@angular/router';
-
-import { HomeComponent } from './pages/home/home.component';
+import { LandingComponent } from './pages/landing/landing.component';
 
 
 const routes: Route[] = [
   {
       path: '',
-      component: HomeComponent,
-  }, 
+      component: LandingComponent,
+  },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'landing',
+  },
 ];
 @NgModule({
   declarations: [
-    HomeComponent
+    LandingComponent,
   ],
   imports: [
     SharedModule,
