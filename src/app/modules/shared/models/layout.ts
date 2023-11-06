@@ -5,3 +5,8 @@ export enum Direction {
     LEFT = 'LEFT',
     RIGHT = 'RIGHT',
 }
+
+export enum Theme{
+    LIGHT = 'light',
+    DARK = 'dark',
+}

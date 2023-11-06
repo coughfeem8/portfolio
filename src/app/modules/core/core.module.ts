@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 
 const modules: any[] = [
   HttpClientModule,
+  AngularSvgIconModule.forRoot(),
   CommonModule,
   RouterModule,
   FormsModule,

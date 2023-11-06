@@ -8,6 +8,7 @@ import { LayoutsModule } from './layouts/layouts.module';
 import { GuardsModule } from './guards/guards.module';
 import { PipesModule } from './pipes/pipes.module';
 import { ComponentsModule } from './components/components.module';
+import { ServiceModule } from './services/service.module';
 //#endregion
 
 const modules: any[]= [
@@ -16,6 +17,7 @@ const modules: any[]= [
   GuardsModule,
   PipesModule,
   ComponentsModule,
+  ServiceModule,
   HttpClientModule,
 ];
 
@@ -25,7 +27,7 @@ const modules: any[]= [
     CoreModule,
     ComponentsModule,
   ],
-  providers: [ ]
+  providers: []
 })
 
 /**
