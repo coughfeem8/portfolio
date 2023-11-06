@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
-
-import { CoreModule } from './modules/core/core.module';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CommonModule } from '@angular/common';
+import { SharedModule } from './modules/shared/shared.module';
 
 
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
@@ -14,8 +11,7 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
     AppComponent
   ],
   imports: [
-    CoreModule,
-    CommonModule,
+    SharedModule,
     BrowserAnimationsModule, // required animations module
     AppRoutingModule,
     

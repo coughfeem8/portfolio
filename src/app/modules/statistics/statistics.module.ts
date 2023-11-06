@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
-import { SharedModule } from '../shared/shared.module';
-import { Route, RouterModule } from '@angular/router';
 import { LandingComponent } from './pages/landing/landing.component';
-
+import { Route, RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 
 const routes: Route[] = [
   {
-      path: '',
-      component: LandingComponent,
+    path: '',
+    component: LandingComponent,
+    
   },
   {
     path: '',
@@ -15,13 +15,14 @@ const routes: Route[] = [
     redirectTo: 'landing',
   },
 ];
+
 @NgModule({
   declarations: [
-    LandingComponent,
+    LandingComponent
   ],
   imports: [
     SharedModule,
     RouterModule.forChild(routes)
   ]
 })
-export class HomeModule { }
+export class StatisticsModule { }
