@@ -22,10 +22,8 @@ export class DarkModeService {
   constructor(){
     const theme = this.get();
     if (theme !== null) {
-      console.log('no setup');
       this.setupTheme(theme);
     }else{
-      console.log('setup');
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
       console.log(prefersDark);
       prefersDark['matches']
