@@ -136,7 +136,21 @@ module.exports = {
         serif: ['Merriweather', 'serif'],
         mono: ['Consolas'],
       },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
+        'slide-menu': {
+          '0%': { transform: 'translateY(0) translateX(0)' },
+          '100%': { transform: 'translateY(-100px) translateX(100px)' },
+        },
+      },
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite',
+        'slide-menu': 'slide-menu 150 linear',
+      },
     },
   },
-  plugins: [],
+  plugins: ['prettier-plugin-tailwindcss'],
 };

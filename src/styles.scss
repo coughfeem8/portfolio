@@ -5,13 +5,19 @@
 @tailwind utilities;
 
 @layer base {
-    body{
-        @apply h-screen bg-anti-flash_white dark:bg-jet  text-jet dark:text-anti-flash_white border-jet dark:border-anti-flash_white
-    }
-    h1 {
-      @apply text-2xl;
-    }
-    h2 {
-      @apply text-xl;
-    }
+  body {
+    @apply h-screen border-jet bg-anti-flash_white text-jet transition duration-500  ease-linear dark:border-anti-flash_white dark:bg-jet dark:text-anti-flash_white;
   }
+}
+
+@layer utilities {
+  .text-border {
+    -webkit-text-stroke: 1px var(--jet); /* For Safari/Chrome */
+    text-stroke: 1px var(--jet); /* For Firefox */
+    -webkit-text-fill-color: transparent; /* For Safari/Chrome */
+    color: transparent; /* Fallback for other browsers */
+  }
+}
+
+@layer components {
+}

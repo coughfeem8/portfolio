@@ -21,4 +21,5 @@ export class MasterLayoutComponent {
   public bottomRight: Direction[] = [Direction.LOW, Direction.RIGHT];
   public left: Direction[] = [Direction.LEFT];
   public right: Direction[] = [Direction.RIGHT];
+  public topRightContent = of(componentsConfig);
 }

@@ -1,6 +1,9 @@
-<div class="h-full w-full flex flex-col">
-  <div id="master-border" class=" m-4 flex flex-row justify-between border-2 border-jet dark:border-anti-flash_white" >
-    <div id="left" class="flex flex-col justify-between items-left">
+<div class="flex h-full w-full flex-col">
+  <div
+    id="master-border"
+    class="m-4 flex flex-row justify-between border-2 border-jet dark:border-anti-flash_white"
+  >
+    <div id="left" class="items-left flex flex-col justify-between">
       <app-corner-menu [type]="topLeft"></app-corner-menu>
       <app-side-menu [type]="left"></app-side-menu>
       <app-corner-menu [type]="bottomLeft"></app-corner-menu>
@@ -8,7 +11,10 @@
     <div id="center" class="flex flex-grow justify-center">
       <router-outlet></router-outlet>
     </div>
-    <div id="right" class="flex flex-col justify-self-stretch justify-between items-right">
+    <div
+      id="right"
+      class="items-right flex flex-col justify-between justify-self-stretch"
+    >
       <app-corner-menu [type]="topRight"></app-corner-menu>
       <app-side-menu [type]="right"></app-side-menu>
       <app-corner-menu [type]="bottomRight"></app-corner-menu>

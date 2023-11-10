@@ -1,0 +1,6 @@
+.text-border {
+  -webkit-text-stroke: 1px black; /* For Safari/Chrome */
+  text-stroke: 1px var(--anti-flash_white); /* For Firefox */
+  -webkit-text-fill-color: transparent; /* For Safari/Chrome */
+  color: transparent; /* Fallback for other browsers */
+}
