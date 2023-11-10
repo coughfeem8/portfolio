@@ -11,7 +11,7 @@ module.exports = {
       },
       colors: {
         jet: {
-          DEFAULT: '#2a2b2a',
+          DEFAULT: 'rgb(var(--jet) / <alpha-value>)',
           100: '#090909',
           200: '#111211',
           300: '#1a1a1a',
@@ -23,7 +23,7 @@ module.exports = {
           900: '#d4d5d4',
         },
         'anti-flash_white': {
-          DEFAULT: '#f0f3f5',
+          DEFAULT: 'rgb(var(--anti-flash_white) / <alpha-value>)',
           100: '#27323a',
           200: '#4e6574',
           300: '#7b96a7',
@@ -35,7 +35,7 @@ module.exports = {
           900: '#fcfdfd',
         },
         dim_gray: {
-          DEFAULT: '#706c61',
+          DEFAULT: 'rgb(var(--dim-gray) / <alpha-value>)',
           100: '#161613',
           200: '#2d2b27',
           300: '#43413a',
@@ -47,7 +47,7 @@ module.exports = {
           900: '#e3e2df',
         },
         cosmic_latte: {
-          DEFAULT: '#f8f4e3',
+          DEFAULT: 'rgb(var(--cosmic-latte) / <alpha-value>)',
           100: '#4c4113',
           200: '#988326',
           300: '#d2b94b',
@@ -59,7 +59,7 @@ module.exports = {
           900: '#fefdf9',
         },
         dun: {
-          DEFAULT: '#d7c9aa',
+          DEFAULT: 'rgb(var(--dun) / <alpha-value>)',
           100: '#342b18',
           200: '#685731',
           300: '#9c8249',
@@ -71,7 +71,7 @@ module.exports = {
           900: '#f7f4ee',
         },
         cerise: {
-          DEFAULT: '#e5446d',
+          DEFAULT: 'rgb(var(--cerise) / <alpha-value>)',
           100: '#340712',
           200: '#680e25',
           300: '#9c1537',
@@ -83,7 +83,7 @@ module.exports = {
           900: '#fad9e1',
         },
         coral: {
-          DEFAULT: '#ff8966',
+          DEFAULT: 'rgb(var(--coral) / <alpha-value>)',
           100: '#471100',
           200: '#8f2100',
           300: '#d63200',
@@ -95,7 +95,7 @@ module.exports = {
           900: '#ffe8e0',
         },
         midnight_green: {
-          DEFAULT: '#19535f',
+          DEFAULT: 'rgb(var(--midnight-green) / <alpha-value>)',
           100: '#051113',
           200: '#0a2227',
           300: '#0f333a',
@@ -107,7 +107,7 @@ module.exports = {
           900: '#c2e7ef',
         },
         skobeloff: {
-          DEFAULT: '#0b7a75',
+          DEFAULT: 'rgb(var(--skobeloff) / <alpha-value>)',
           100: '#021817',
           200: '#05312e',
           300: '#074945',
@@ -119,7 +119,7 @@ module.exports = {
           900: '#baf9f5',
         },
         falu_red: {
-          DEFAULT: '#7b2d26',
+          DEFAULT: 'rgb(var(--falu-red) / <alpha-value>)',
           100: '#190908',
           200: '#32120f',
           300: '#4b1b17',

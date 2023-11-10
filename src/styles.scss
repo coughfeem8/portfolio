@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file and also import other style files */
 
 @tailwind base;
 @tailwind components;
@@ -6,8 +6,37 @@
 
 @layer base {
   body {
-    @apply h-screen border-jet bg-anti-flash_white text-jet transition duration-500  ease-linear dark:border-anti-flash_white dark:bg-jet dark:text-anti-flash_white;
+    @apply h-screen
+     border-jet bg-anti-flash_white text-jet 
+     transition duration-500  ease-linear 
+     dark:border-anti-flash_white dark:bg-jet dark:text-anti-flash_white;
   }
+  :root {
+    --jet: 42 43 42;
+    --anti-flash-white: 240 243 245;
+    --dim-gray: 112 108 97;
+    --cosmic-late: 248 244 227;
+    --dun: 215 201 170;
+    --cerise: 229 68 109;
+    --coral: 255 137 102;
+    --midnight-green: 25 83 95;
+    --skobeloff: 11 122 117;
+    --falu-red: 123 45 38;
+
+    --color-bkg: var(--anti-flash-white);
+    --color-content: var(--jet);
+  }
+
+  // @media (prefers-color-scheme: dark) {
+  //   :root {
+  //     --color-bkg: var(--jet);
+  //     --color-content: var(--anti-flash-white);
+  //   }
+  // }
+  // :root[data-theme="dark"] {
+  //   --color-bkg: var(--jet);
+  //   --color-content: var(--anti-flash-white);
+  // }
 }
 
 @layer utilities {
