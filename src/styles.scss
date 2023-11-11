@@ -6,10 +6,10 @@
 
 @layer base {
   body {
-    @apply h-screen
-     border-jet bg-anti-flash_white text-jet 
-     transition duration-500  ease-linear 
-     dark:border-anti-flash_white dark:bg-jet dark:text-anti-flash_white;
+    @apply bg-anti-flash-white
+     dark:border-anti-flash-white dark:text-anti-flash-white h-screen 
+     border-jet text-jet  transition 
+     duration-500 ease-linear dark:bg-jet;
   }
   :root {
     --jet: 42 43 42;
@@ -23,19 +23,19 @@
     --skobeloff: 11 122 117;
     --falu-red: 123 45 38;
 
-    --color-bkg: var(--anti-flash-white);
-    --color-content: var(--jet);
+    --bkg: var(--anti-flash-white);
+    --content: var(--jet);
   }
 
   // @media (prefers-color-scheme: dark) {
   //   :root {
-  //     --color-bkg: var(--jet);
-  //     --color-content: var(--anti-flash-white);
+  //     --bkg: var(--jet);
+  //     --content: var(--anti-flash-white);
   //   }
   // }
   // :root[data-theme="dark"] {
-  //   --color-bkg: var(--jet);
-  //   --color-content: var(--anti-flash-white);
+  //   --bkg: var(--jet);
+  //   --content: var(--anti-flash-white);
   // }
 }
 
