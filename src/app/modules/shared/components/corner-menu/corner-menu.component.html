@@ -1,8 +1,5 @@
 <div>
-  <div
-    class="dark:border-anti-flash-white border-solid border-jet"
-    [class]="setupCornerStyle()"
-  >
+  <div class="border-solid border-content" [class]="setupCornerStyle()">
     <span *ngIf="content | async">
       <ng-container #container></ng-container>
     </span>

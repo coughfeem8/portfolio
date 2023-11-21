@@ -6,10 +6,9 @@
 
 @layer base {
   body {
-    @apply bg-anti-flash-white
-     dark:border-anti-flash-white dark:text-anti-flash-white h-screen 
-     border-jet text-jet  transition 
-     duration-500 ease-linear dark:bg-jet;
+    @apply h-screen
+     border-content bg-bkg text-content 
+     transition duration-500  ease-linear;
   }
   :root {
     --jet: 42 43 42;
@@ -27,25 +26,27 @@
     --content: var(--jet);
   }
 
-  // @media (prefers-color-scheme: dark) {
-  //   :root {
-  //     --bkg: var(--jet);
-  //     --content: var(--anti-flash-white);
-  //   }
-  // }
-  // :root[data-theme="dark"] {
-  //   --bkg: var(--jet);
-  //   --content: var(--anti-flash-white);
-  // }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bkg: var(--jet);
+      --content: var(--anti-flash-white);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bkg: var(--jet);
+    --content: var(--anti-flash-white);
+  }
+
+  :root[data-theme="light"] {
+    --bkg: var(--anti-flash-white);
+    --content: var(--jet);
+  }
+}
+@layer base {
 }
 
 @layer utilities {
-  .text-border {
-    -webkit-text-stroke: 1px var(--jet); /* For Safari/Chrome */
-    text-stroke: 1px var(--jet); /* For Firefox */
-    -webkit-text-fill-color: transparent; /* For Safari/Chrome */
-    color: transparent; /* Fallback for other browsers */
-  }
 }
 
 @layer components {

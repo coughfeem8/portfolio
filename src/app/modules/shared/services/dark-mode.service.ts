@@ -27,8 +27,8 @@ export class DarkModeService {
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
       console.log(prefersDark);
       prefersDark['matches']
-        ? this.setupTheme(Theme.DARK)
-        : this.setupTheme(Theme.LIGHT);
+        ? this._currentTheme.next(Theme.DARK)
+        : this._currentTheme.next(Theme.LIGHT);
     }
   }
 
@@ -45,15 +45,16 @@ export class DarkModeService {
   private clear() {
     localStorage.removeItem(this.KEY);
   }
+
   setupTheme(theme: Theme) {
     this.set(theme);
     if (
       this.curentThemeSnapshot !== null &&
       this.curentThemeSnapshot === 'dark'
     ) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.setAttribute('data-theme', 'dark');
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.setAttribute('data-theme', 'light');
     }
   }
 }

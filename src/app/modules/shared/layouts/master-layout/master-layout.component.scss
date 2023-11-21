@@ -2,11 +2,11 @@
   width: calc(100% - 32px);
   height: calc(100% - 32px);
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 7rem 1fr 7rem;
   grid-template-areas:
-    "tl m m m tr"
-    "sl m m m sr "
-    "bl m m m br ";
+    "tl m tr"
+    "sl m sr "
+    "bl m br ";
 }
 #tl {
   grid-area: tl;
