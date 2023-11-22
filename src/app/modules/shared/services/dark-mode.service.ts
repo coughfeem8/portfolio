@@ -8,27 +8,27 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class DarkModeService {
   private KEY = 'theme';
 
-  private _currentTheme: BehaviorSubject<Theme| null> =
+  private _currentTheme: BehaviorSubject<Theme | null> =
     new BehaviorSubject<Theme | null>(null);
 
   get curentThemeSnapshot(): Theme | null {
     return this._currentTheme.value;
   }
 
-  get currentTheme$(): Observable<Theme| null> {
+  get currentTheme$(): Observable<Theme | null> {
     return this._currentTheme.asObservable();
   }
 
-  constructor(){
+  constructor() {
     const theme = this.get();
     if (theme !== null) {
       this.setupTheme(theme);
-    }else{
+    } else {
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
       console.log(prefersDark);
       prefersDark['matches']
-        ? this.setupTheme(Theme.DARK)
-        : this.setupTheme(Theme.LIGHT);
+        ? this._currentTheme.next(Theme.DARK)
+        : this._currentTheme.next(Theme.LIGHT);
     }
   }
 
@@ -38,19 +38,23 @@ export class DarkModeService {
     return true;
   }
 
-  private get(): Theme | null  {
-    return (localStorage.getItem(this.KEY) as Theme);
+  private get(): Theme | null {
+    return localStorage.getItem(this.KEY) as Theme;
   }
 
   private clear() {
     localStorage.removeItem(this.KEY);
   }
+
   setupTheme(theme: Theme) {
     this.set(theme);
-    if (this.curentThemeSnapshot !== null && this.curentThemeSnapshot === 'dark') {
-      document.documentElement.classList.add('dark');
+    if (
+      this.curentThemeSnapshot !== null &&
+      this.curentThemeSnapshot === 'dark'
+    ) {
+      document.documentElement.setAttribute('data-theme', 'dark');
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.setAttribute('data-theme', 'light');
     }
   }
 }

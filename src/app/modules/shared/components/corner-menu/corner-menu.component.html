@@ -1,11 +1,10 @@
-<div >
-    <div class="border-solid border-jet dark:border-anti-flash_white" [class]="setupCornerStyle()" >
-        <span *ngIf="(content | async)">
-            <ng-container #container></ng-container>
-        </span>
-        <span *ngIf="!(content | async)">
-            <p class="font-mono font-medium " [class]="setupTextStyle()">{{text}}</p>
-        </span>
-    </div>
+<div>
+  <div class="border-solid border-content" [class]="setupCornerStyle()">
+    <span *ngIf="content | async">
+      <ng-container #container></ng-container>
+    </span>
+    <span *ngIf="!(content | async)">
+      <p class="font-mono font-medium" [class]="setupTextStyle()">{{ text }}</p>
+    </span>
+  </div>
 </div>
-

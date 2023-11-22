@@ -1,0 +1,13 @@
+.text-border-content {
+  -webkit-text-stroke: 1px black; /* For Safari/Chrome */
+  text-stroke: 1px black; /* For Firefox */
+  -webkit-text-fill-color: transparent; /* For Safari/Chrome */
+  color: transparent; /* Fallback for other browsers */
+}
+
+.text-border-bkg {
+  -webkit-text-stroke: 1px white; /* For Safari/Chrome */
+  text-stroke: 1px white; /* For Firefox */
+  -webkit-text-fill-color: transparent; /* For Safari/Chrome */
+  color: transparent; /* Fallback for other browsers */
+}

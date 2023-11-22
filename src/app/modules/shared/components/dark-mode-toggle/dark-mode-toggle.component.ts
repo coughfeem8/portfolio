@@ -12,34 +12,34 @@ import { environment } from 'src/environments/environment';
 export class DarkModeToggleComponent implements OnInit, OnDestroy {
   private onDestroy$: Subject<boolean> = new Subject();
   private icons: any = { dark: 'moon.svg', light: 'sun.svg' };
-  public state!: Theme| null;
+  public state!: Theme | null;
   public currentIncon = '';
   constructor(private service: DarkModeService) {}
-  
+
   ngOnInit(): void {
-    this.service.currentTheme$.pipe(
-      skipWhile(p => p == null),
-      takeUntil(this.onDestroy$)
-    ).subscribe(
-    (res) => {
-      this.state = res;
-      this.updateIcon();
-    }
-    );
+    this.service.currentTheme$
+      .pipe(
+        skipWhile((p) => p == null),
+        takeUntil(this.onDestroy$),
+      )
+      .subscribe((res) => {
+        this.state = res;
+        this.updateIcon();
+      });
     if (this.state !== null) {
       this.updateIcon();
     }
   }
-  private updateIcon(){
-    if(this.state)
-    this.currentIncon = environment.iconPath + this.icons[this.state];
+  private updateIcon() {
+    if (this.state)
+      this.currentIncon = environment.iconPath + this.icons[this.state];
   }
 
   toggle() {
-    if (this.state === Theme.DARK){
+    console.log(this.state);
+    if (this.state === Theme.DARK) {
       this.service.setupTheme(Theme.LIGHT);
-    }
-    else{
+    } else {
       this.service.setupTheme(Theme.DARK);
     }
   }
@@ -48,7 +48,4 @@ export class DarkModeToggleComponent implements OnInit, OnDestroy {
     this.onDestroy$.next(true);
     this.onDestroy$.complete();
   }
-
-
-  
 }

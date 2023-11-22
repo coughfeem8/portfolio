@@ -1,17 +1,11 @@
-<div class="h-full w-full flex flex-col">
-  <div id="master-border" class=" m-4 flex flex-row justify-between border-2 border-jet dark:border-anti-flash_white" >
-    <div id="left" class="flex flex-col justify-between items-left">
-      <app-corner-menu [type]="topLeft"></app-corner-menu>
-      <app-side-menu [type]="left"></app-side-menu>
-      <app-corner-menu [type]="bottomLeft"></app-corner-menu>
-    </div>
-    <div id="center" class="flex flex-grow justify-center">
-      <router-outlet></router-outlet>
-    </div>
-    <div id="right" class="flex flex-col justify-self-stretch justify-between items-right">
-      <app-corner-menu [type]="topRight"></app-corner-menu>
-      <app-side-menu [type]="right"></app-side-menu>
-      <app-corner-menu [type]="bottomRight"></app-corner-menu>
-    </div>
+<div class="h-full w-full">
+  <div id="master-border" class="m-4 border-2 border-content">
+    <app-corner-menu id="tl" [type]="topLeft"></app-corner-menu>
+    <app-corner-menu id="tr" [type]="topRight"></app-corner-menu>
+    <app-side-menu id="sl" [type]="left"></app-side-menu>
+    <div id="m"><router-outlet></router-outlet></div>
+    <app-side-menu id="sr" [type]="right"></app-side-menu>
+    <app-corner-menu id="bl" [type]="bottomLeft"></app-corner-menu>
+    <app-corner-menu id="br" [type]="bottomRight"></app-corner-menu>
   </div>
 </div>

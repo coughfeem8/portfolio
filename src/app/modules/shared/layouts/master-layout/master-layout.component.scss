@@ -1,4 +1,39 @@
-#master-border{
-    width: calc(100% - 32px);
-    height: calc(100% - 32px);
+#master-border {
+  width: calc(100% - 32px);
+  height: calc(100% - 32px);
+  display: grid;
+  grid-template-columns: 7rem 1fr 7rem;
+  grid-template-areas:
+    "tl m tr"
+    "sl m sr "
+    "bl m br ";
+}
+#tl {
+  grid-area: tl;
+  align-self: start;
+}
+#tr {
+  grid-area: tr;
+  align-items: start;
+}
+#sl {
+  grid-area: sl;
+  align-self: center;
+  justify-content: center;
+}
+#m {
+  grid-area: m;
+  align-self: start;
+}
+#sr {
+  grid-area: sr;
+  align-self: center;
+}
+#bl {
+  grid-area: bl;
+  align-self: end;
+}
+#br {
+  grid-area: br;
+  align-self: end;
 }
