@@ -19,7 +19,7 @@ const componentsConfig = [
 export class MasterLayoutComponent implements OnInit {
   constructor(private responsive: ResponsiveService) {}
 
-  public isPhone: boolean = false;
+  public isDesktop: boolean = true;
   public isPortrait: boolean = false;
 
   public topLeft: Direction[] = [Direction.HI, Direction.LEFT];
@@ -37,13 +37,13 @@ export class MasterLayoutComponent implements OnInit {
         //takeUntil(this.onDestroy$),
       )
       .subscribe((res) => {
-        this.isPhone = res.size === Size.PHONE;
+        this.isDesktop = res.size === Size.DESKTOP;
         this.isPortrait = res.orientation === Orientation.PORTRAIT;
         this.setupLayout();
       });
   }
 
   public setupLayout(): string {
-    return this.isPhone ? 'mobile' : 'desktop';
+    return this.isPortrait || this.isDesktop ? 'desktop' : 'mobile';
   }
 }

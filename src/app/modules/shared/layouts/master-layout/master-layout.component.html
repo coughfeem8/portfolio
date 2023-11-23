@@ -11,15 +11,15 @@
       [type]="topRight"
     ></app-corner-menu>
     <app-side-menu
-      *ngIf="!isPhone"
+      *ngIf="isDesktop"
       class="justify-center self-center grid-in-side-left"
       [type]="left"
     ></app-side-menu>
-    <div class="self-start grid-in-middle" id="m">
+    <div class="self-start grid-in-middle">
       <router-outlet></router-outlet>
     </div>
     <app-side-menu
-      *ngIf="!isPhone"
+      *ngIf="isDesktop"
       class="self-center grid-in-side-right"
       [type]="right"
     ></app-side-menu>
