@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -11,7 +10,7 @@ import { ComponentsModule } from './components/components.module';
 import { ServiceModule } from './services/service.module';
 //#endregion
 
-const modules: any[]= [
+const modules: any[] = [
   CoreModule,
   LayoutsModule,
   GuardsModule,
@@ -23,11 +22,8 @@ const modules: any[]= [
 
 @NgModule({
   imports: modules,
-  exports: [
-    CoreModule,
-    ComponentsModule,
-  ],
-  providers: []
+  exports: [CoreModule, ComponentsModule],
+  providers: [],
 })
 
 /**
@@ -35,4 +31,4 @@ const modules: any[]= [
  * here you will add global application features that are not required at startup.
  * DO DOT include at App Module or at the Core Module.
  */
-export class SharedModule { }
+export class SharedModule {}

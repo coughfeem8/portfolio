@@ -4,6 +4,18 @@ module.exports = {
   darkMode: 'media',
   theme: {
     extend: {
+      gridTemplateAreas: {
+        desktop: [
+          'top-left     .    top-right',
+          'side-left  middle side-right',
+          'bottom-left  .    bottom-right',
+        ],
+        mobile: [
+          'top-left     .    top-right',
+          'middle     middle middle',
+          'bottom-left  .    bottom-right',
+        ],
+      },
       screens: {
         tablet: '640px',
         laptop: '1024px',
@@ -84,5 +96,8 @@ module.exports = {
       },
     },
   },
-  plugins: ['prettier-plugin-tailwindcss'],
+  plugins: [
+    'prettier-plugin-tailwindcss',
+    require('@savvywombat/tailwindcss-grid-areas'),
+  ],
 };

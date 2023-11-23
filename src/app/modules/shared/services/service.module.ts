@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { DarkModeService } from './dark-mode.service';
+import { ResponsiveService } from './responsive.service'
 
 
 @NgModule({
@@ -7,7 +8,8 @@ import { DarkModeService } from './dark-mode.service';
   imports: [
   ],
   providers: [
-    DarkModeService
+    DarkModeService,
+    ResponsiveService,
   ]
 })
 export class ServiceModule { }

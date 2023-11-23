@@ -36,7 +36,6 @@ export class DarkModeToggleComponent implements OnInit, OnDestroy {
   }
 
   toggle() {
-    console.log(this.state);
     if (this.state === Theme.DARK) {
       this.service.setupTheme(Theme.LIGHT);
     } else {

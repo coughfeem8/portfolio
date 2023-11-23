@@ -1,11 +1,36 @@
 <div class="h-full w-full">
-  <div id="master-border" class="m-4 border-2 border-content">
-    <app-corner-menu id="tl" [type]="topLeft"></app-corner-menu>
-    <app-corner-menu id="tr" [type]="topRight"></app-corner-menu>
-    <app-side-menu id="sl" [type]="left"></app-side-menu>
-    <div id="m"><router-outlet></router-outlet></div>
-    <app-side-menu id="sr" [type]="right"></app-side-menu>
-    <app-corner-menu id="bl" [type]="bottomLeft"></app-corner-menu>
-    <app-corner-menu id="br" [type]="bottomRight"></app-corner-menu>
+  <div
+    class="m-4 grid h-[calc(100vh-32px)] w-[calc(100vw-32px)] grid-cols-[7rem_1fr_7rem] border-2 border-content grid-areas-mobile lg:grid-areas-desktop"
+  >
+    <app-corner-menu
+      class="self-start grid-in-top-left"
+      [type]="topLeft"
+    ></app-corner-menu>
+    <app-corner-menu
+      class="self-start grid-in-top-right"
+      [type]="topRight"
+    ></app-corner-menu>
+    <app-side-menu
+      *ngIf="!isPhone"
+      class="justify-center self-center grid-in-side-left"
+      [type]="left"
+    ></app-side-menu>
+    <div class="self-start grid-in-middle" id="m">
+      <router-outlet></router-outlet>
+    </div>
+    <app-side-menu
+      *ngIf="!isPhone"
+      class="self-center grid-in-side-right"
+      [type]="right"
+    ></app-side-menu>
+    <app-corner-menu
+      class="self-end grid-in-bottom-left"
+      [type]="bottomLeft"
+    ></app-corner-menu>
+    <app-corner-menu
+      id="br"
+      class="self-end grid-in-bottom-right"
+      [type]="bottomRight"
+    ></app-corner-menu>
   </div>
 </div>
