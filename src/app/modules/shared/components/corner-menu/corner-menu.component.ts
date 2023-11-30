@@ -26,13 +26,11 @@ export class CornerMenuComponent extends BaseMenuComponent implements OnInit {
     this.content
       .pipe(
         skipWhile((p) => p == null),
-        takeUntil(this.onDestroy$)
+        takeUntil(this.onDestroy$),
       )
       .subscribe((res) => {
         res.forEach(async (component) => {
-          console.log('adding components');
           const componentInstance = await component.component();
-          console.log(this.container);
           const ref = this.container.createComponent(componentInstance);
         });
       });

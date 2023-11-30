@@ -10,7 +10,6 @@ export class LandingComponent {
   constructor(private router: Router) {}
 
   navigateTo(path: string) {
-    console.log(path);
     this.router.navigate([path]);
   }
 }
